@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 // parse pplication/json
 app.use(bodyParser.json());
-app.use(require('./router/auth'));
+app.use(require('./router/auth')); //middleware :)
 const user = require('./model/userSchema')
 
 // Variables calling from dotenv--

@@ -11,6 +11,8 @@ module.exports = {
         Roboto: ["Roboto","sans-serif"],
         Amsterdam: ["Amsterdam","sans-serif"]
       },
+      plugins: [require("tw-elements/plugin.cjs")],
+      darkMode: "class"
     },
   },
   plugins: [],

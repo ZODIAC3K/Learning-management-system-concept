@@ -44,9 +44,10 @@ function Dashboard() {
   const [des, setDes] = useState("XXX");
 
   useEffect(() => {
+
+
+
     switch (true) {
-
-
       case URL_NAME.toLowerCase() === '/support':
         setHeading('Support');
         setSupport(<Support />);
@@ -239,6 +240,10 @@ function Dashboard() {
                 {complaint}
                 {notice}
                 {support}
+                {suggestion}
+                {food}
+                {rulebook}
+                {event}
                 {/* <Link to={back}>
                 <div className=' mt-10 md:mb-6 cursor-pointer'>
                   <div className='bg-[#F9C041]  py-2 px-8 rounded-full text-lg text-white border-2 border-white hover:text-[#F9C041] hover:bg-white hover:border-2 hover:border-[#F9C041]'>

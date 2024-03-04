@@ -1,39 +1,19 @@
-// Imports --
-const express = require('express')
-const app = express()
-require('dotenv').config(); // Making our code secure by not letting our user see DB Address and other sensitive informations..
-require('./db/conn') // importing our DB connection File
- // Calling our userSchema for posting form data to mongodb.
-const bodyParser = require('body-parser')
+// Imports
+const express = require('express');
+const app = express();
+const cors = require("cors");
+require('dotenv').config(); // Load environment variables
+require('./db/conn'); // Import DB connection
 
-// parse application/x-ww-from-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
-// parse pplication/json
-app.use(bodyParser.json());
-app.use(require('./router/auth')); //middleware :)
-const user = require('./model/userSchema')
+// Middleware for parsing request bodies
+app.use(express.urlencoded({ extended: false })); // Replace bodyParser with express' built-in method
+app.use(express.json());
 
-// Variables calling from dotenv--
-const port = process.env.port;
+app.use(require('./router/auth')); // Include routes
+app.use(cors());
+// Listen on the port defined in the environment variables or default to 3000
+const port = process.env.PORT || 3000;
 
-
-
-
-const userTypeCheck = (req, res, next) => {
-    // console.log(`
-    // if 
-    //     User is Student Redirect it to Student Dashboard.
-    // else if
-    //     User is Staff Redirect it to Teacher Dashboard.
-    // else if
-    //     User is Admin Redirect it to Admin Dashboard.
-    // else
-    //     User is not found contact admin through Email: XXX.
-    // `);
-    console.log(`Middleware is running successfully...`)
-    next();
-}
-
-app.listen(port,() => {
+app.listen(port, () => {
     console.log(`Application is running at http://localhost:${port}`);
 });

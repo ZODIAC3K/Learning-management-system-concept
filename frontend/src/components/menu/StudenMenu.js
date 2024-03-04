@@ -1,6 +1,6 @@
 import React from 'react'
 import attendance_img from './img/attendance_img.svg'
-import special_request_img from './img/special_request_img.svg'
+// import special_request_img from './img/special_request_img.svg'
 import support_img from './img/support_img.svg'
 import notice_img from './img/notice_img.svg'
 import review_img from './img/review_img.svg'
@@ -17,10 +17,10 @@ function StudenMenu() {
           </div>
           <div className='flex md:flex-col flex-row '>
             <div className='flex flex-col md:flex-row justify-center items-center'>
-              <Link to='/dashboard/student_dashboard/attendance'>
+              <Link to='/dashboard/student_dashboard/rulebook'>
                 <div className='cursor-pointer m-4 w-36 h-36  lg:w-[18rem] lg:h-[16rem] shadow-xl rounded-md flex flex-col justify-center items-center'>
                 <img src={attendance_img} className=' border-[#F9C041] w-24 md:w-[10rem] mt-2'></img>
-                <div className='my-2 text-sm md:text-[24px]'>Attendance</div>
+                <div className='my-2 text-sm md:text-[24px]'>Rule Book</div>
                 </div>
               </Link>
               <Link to='/dashboard/student_dashboard/complaint'>
@@ -31,16 +31,22 @@ function StudenMenu() {
               </Link>
             </div>
             <div div className='flex flex-col md:flex-row  justify-center items-center'>
-              <Link to='/dashboard/student_dashboard/notice'>
+              <Link to='/dashboard/student_dashboard/event'>
                 <div className='cursor-pointer m-4 w-36 h-36  lg:w-[18rem] lg:h-[16rem] shadow-xl rounded-md flex flex-col justify-center items-center'>
                 <img src={notice_img} className=' border-[#F9C041] w-24 md:w-[8rem]'></img>
-                <div className='my-2 text-sm md:text-[24px]'>Notice</div>
+                <div className='my-2 text-sm md:text-[24px]'>Event</div>
                 </div>
               </Link>
               <Link to='/dashboard/student_dashboard/support'>
                 <div className='cursor-pointer m-4 w-36 h-36  lg:w-[18rem] lg:h-[16rem] shadow-xl rounded-md flex flex-col justify-center items-center'>
                 <img src={support_img} className=' border-[#F9C041] w-24 md:w-[6rem]'></img>
                 <div className='my-2 text-sm md:text-[24px]'>Support</div>
+                </div>
+              </Link>
+              <Link to='/dashboard/student_dashboard/food'>
+                <div className='cursor-pointer m-4 w-36 h-36  lg:w-[18rem] lg:h-[16rem] shadow-xl rounded-md flex flex-col justify-center items-center'>
+                <img src={support_img} className=' border-[#F9C041] w-24 md:w-[6rem]'></img>
+                <div className='my-2 text-sm md:text-[24px]'>Food</div>
                 </div>
               </Link>
             </div>

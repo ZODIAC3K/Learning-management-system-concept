@@ -109,7 +109,6 @@ userSchema.pre('save', async function(req, res, next) {
         this.pwd = await bcrypt.hash(this.pwd, 12);
         this.cpwd = await bcrypt.hash(this.cpwd, 12);
     }
-    next();
 })
 
 

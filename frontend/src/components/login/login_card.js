@@ -23,7 +23,7 @@ const Login_Card = () => {
      data = await res.json(); // READ TYPE FROM HERE AND THEN SHOW XYZ PAGE ACCORDING TO IT!! after everything is working work on data security! and complaint.
     
     if(res.status === 400 || !data ){
-      window.alert("Invalid credentials");
+      window.alert("Invalid credentials",data);
     }
     else if (data){
       // redirect to dashboard according to the permission!
